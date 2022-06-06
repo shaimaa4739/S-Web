@@ -1,0 +1,72 @@
+
+	<div class="container h-100" style="margin-top: 110px; margin-bottom: 50px;">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<div class="brand_logo_container">
+						<img src="../assets/Images/12.jpg" class="brand_logo" alt="Logo">
+					</div>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form [formGroup]="ourValidation">
+						<div class="input-group mb-3">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-user"></i></span>
+							</div>
+							<input type="text"
+              name=""
+              class="form-control input_user"
+              value="" placeholder="username"
+              formControlName="email">
+
+						</div>
+            <div class="text-danger" *ngIf="getEmail.invalid && (getEmail.touched || getEmail.dirty)">
+              <!-- <p>{{ourValidation.controls["email"].errors | json}}</p> -->
+              <div class="alert alert-danger" *ngIf="getEmail.errors?.['required']">
+                Email is required
+              </div>
+              <div class="alert alert-danger" *ngIf="getEmail.errors?.['email']">
+                Email must be something like a@gmail
+              </div>
+            </div>
+
+						<div class="input-group mb-2">
+							<div class="input-group-append">
+								<span class="input-group-text"><i class="fas fa-key" ></i></span>
+							</div>
+							<input
+              type="password"
+              name=""
+              class="form-control input_pass"
+              value="" placeholder="password"
+              formControlName="password">
+						</div>
+            <div class="text-danger" *ngIf="getPassword.invalid && (getPassword.touched || getPassword.dirty)">
+              <!-- <p>{{ourValidation.controls["email"].errors | json}}</p> -->
+              <div class="alert alert-danger" *ngIf="!getPasswordValid">
+                Invalid Password
+              </div>
+            </div>
+							<div class="d-flex justify-content-center mt-3 login_container">
+                <!-- <button type="button" name="button" class="btn login_btn" (click)="sendData()">Login</button> -->
+				 	<!-- <button type="button" name="button" class="btn login_btn" >Login</button> -->
+           <button type="button" name="button" class="btn login_btn" routerLink="/products"*ngIf="submitData">Login</button>
+
+          </div>
+					</form>
+				</div>
+
+				<div class="mt-4">
+					<div class="d-flex justify-content-center links">
+						Don't have an account? <a href="#" class="ml-2"> Sign Up</a>
+					</div>
+					<div class="d-flex justify-content-center links">
+						<a href="#">Forgot your password?</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <!-- <p>{{ourValidation.value | json}}</p> -->
+

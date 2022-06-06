@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="card col-3  m-3 text-center" style="width: 18rem;" *ngFor="let usr of users">
+      <img class="card-img-top" style="height: 200px; object-fit: cover;" src="../assets/Images/19.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{usr.name}}</h5>
+        <p class="card-text">{{usr.email}}</p>
+        <a routerLink="profile/{{usr.id}}" class="btnn">Profile</a>
+      </div>
+    </div>
+  </div>
+</div>

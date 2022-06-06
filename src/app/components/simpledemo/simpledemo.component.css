@@ -1,0 +1,27 @@
+*{
+  font-family: Cairo, sans-serif;
+}
+.table{
+  box-shadow: #e2e2e2 0px 7px 29px 0px;
+}
+.focaus{
+  background-color: #889bb1;
+  color: #EEEEEE !important;
+}
+h2{
+  font-weight: 600;
+}
+th{
+  font-size: 18px;
+  font-weight: 700;
+}
+td{
+  font-size: 16px;
+  font-weight: 600;
+}
+.btn{
+  background-color: #FC5185 !important;
+}
+.btn:hover{
+  background-color: #364F6B !important;
+}

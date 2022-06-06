@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'test-app';
+  parentData:string="data from parent";
+  recieveLogin:string="";
+  reciveDataFromChild(data:string){
+    this.recieveLogin=data;
+  }
+  title ='test-app';
 }

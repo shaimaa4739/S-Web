@@ -1,0 +1,20 @@
+.container{
+  font-family: Cairo;
+}
+h5{
+  font-size: 22px;
+  font-weight: 600;
+}
+p{
+  font-size: 18px;
+}
+.btnn{
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #FC5185;
+  color: #EEEEEE;
+}
+.btnn:hover{
+  background-color: #364F6B;
+}

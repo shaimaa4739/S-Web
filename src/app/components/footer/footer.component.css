@@ -1,0 +1,15 @@
+footer{
+  font-family: Cairo, sans-serif;
+  background-color: #364F6B !important;
+  font-size: 18px;
+  width: 100%;
+}
+.btn-floating:hover{
+  color: #FC5185;
+  background-color: white;
+  border: #FC5185 solid 1px;
+}
+.list-unstyled a{
+  text-decoration: none;
+  font-size: 18px;
+}

@@ -1,0 +1,57 @@
+
+<div class="container mt-5 mb-5">
+  <h2 class="text-center">Our Products</h2>
+  <h2 class="text-warning text-center">Data from parent is : {{reciveDataParent}}</h2>
+  <div class="container mt-5 mb-5">
+    <select class="form-select" [value]="selected" (change)="sendSelection($event)" aria-label="Default select example">
+      <option value="all">All</option>
+      <option value="mobile">Mobiles</option>
+      <option value="laptop">Laptops</option>
+      <option value="tv">TVs</option>
+    </select>
+  </div>
+  <table class="table table-striped mt-5 border text-center">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Product Name</th>
+        <th scope="col">Date</th>
+        <th scope="col">Image</th>
+        <th scope="col">Required Quantity</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let product of productsFiltered"
+        [class.focaus]="product.quantity == 4"
+      >
+        <td>{{ product.id }}</td>
+        <td>{{ product.title | uppercase }}</td>
+        <!-- or  date:"dd/mm/yy" -->
+        <td>{{ myDate | date}}</td>
+        <td><img appLightbox lightBoxColor="#FC5185" lightBoxhover="#364F6B" [src]="product.imageUrl"  style="width:180px;height: 180px;object-fit: cover;" alt=""> </td>
+        <td>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="enter quantity"
+            #temp
+          />
+        </td>
+
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.price | currency}}</td>
+
+        <td>
+          <button class="btn bg-primary text-light" (click)="buyProduct(product.price,temp.value)">Buy Now</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <h5 class="text-center" appLightbox lightBoxColor="#FFFFFF" lightBoxhover="#BBBBBB">Total Price : <span class="text-danger">{{totalPrice| currency}}</span></h5>
+</div>
+
